@@ -3,12 +3,7 @@
 
 This repository contains the source code for my personal portfolio website. It's a modern, responsive, and visually engaging single-page application designed to showcase my skills, experience, and projects as a Linux & Azure Infrastructure & Automation Administrator.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/pranitham12374/deploy-status)](https://app.netlify.com/sites/pranitham/deploys)
-
-**Live Demo:** [https://pranithamdevarakonda.netlify.app/](https://pranithamdevarakonda.netlify.app/)
-
-![Portfolio Screenshot](./screenshot.png) 
-*(You would need to add a screenshot.png to your project for this to display)*
+**Live Demo:** [https://pranitham.netlify.app/](https://pranitham.netlify.app/)
 
 ## ✨ Features
 
@@ -34,7 +29,7 @@ This project is built with a modern frontend stack:
 - **3D Rendering**: [Three.js](https://threejs.org/), [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [@react-three/drei](https://github.com/pmndrs/drei)
 - **Animation**: [Framer Motion](https://www.framer.com/motion/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Build Tool**: [Vite](https://vitejs.dev/) (Assumed, as it's common for this stack)
+- **Build Tool**: [Vite](https://vitejs.dev/)
 
 ## 📂 Project Structure
 
