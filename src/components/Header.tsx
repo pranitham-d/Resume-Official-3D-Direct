@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const navLinks = [
@@ -11,6 +12,7 @@ const navLinks = [
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const resumeUrl = "https://drive.google.com/uc?export=download&id=1T0GnrrvWR8teOti3Gc8DiAv0hZsC8n08";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,51 +34,6 @@ const Header: React.FC = () => {
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleResumeDownload = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    // Use the actual resume if it's in the public folder, otherwise create a temporary file.
-    const resumeUrl = '/Pranitham_Devarakonda_Resume.pdf';
-    
-    fetch(resumeUrl)
-      .then(res => {
-        if (res.ok) {
-           return res.blob();
-        }
-        throw new Error('Resume not found');
-      })
-      .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = "Pranitham_Devarakonda_Resume.pdf";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-      })
-      .catch(() => {
-        // Fallback to a temporary text file
-        const resumeContent = `
-    Name: Pranitham Devarakonda
-    Title: Linux | Azure | Infrastructure & Automation Administrator
-    Contact: pranitham12374@gmail.com
-
-    --- PLACEHOLDER RESUME ---
-
-    This is a temporary file. Please add your resume to the 'public' folder.
-        `;
-        const blob = new Blob([resumeContent], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Pranitham_Devarakonda_Resume.txt';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      });
   };
 
   return (
@@ -101,8 +58,9 @@ const Header: React.FC = () => {
             </a>
           ))}
           <a
-            href="/Pranitham_Devarakonda_Resume.pdf"
-            onClick={handleResumeDownload}
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-accent border-2 border-accent px-4 py-1.5 rounded-full hover:bg-accent hover:text-secondary transition-colors duration-300 uppercase tracking-wider text-sm font-semibold"
             >
                 Resume
@@ -130,11 +88,10 @@ const Header: React.FC = () => {
               </a>
             ))}
              <a
-                href="/Pranitham_Devarakonda_Resume.pdf"
-                onClick={(e) => {
-                  handleResumeDownload(e);
-                  setMenuOpen(false);
-                }}
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
                 className="text-text-primary hover:text-accent transition-colors duration-300 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Download Resume

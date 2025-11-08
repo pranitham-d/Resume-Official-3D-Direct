@@ -1,3 +1,4 @@
+
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Sphere, MeshDistortMaterial } from '@react-three/drei';
@@ -25,53 +26,10 @@ const AnimatedSphere: React.FC = () => {
 };
 
 const Hero: React.FC = () => {
+  const resumeUrl = "https://drive.google.com/uc?export=download&id=1T0GnrrvWR8teOti3Gc8DiAv0hZsC8n08";
+
   const handleScrollDown = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleResumeDownload = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    // Use the actual resume if it's in the public folder, otherwise create a temporary file.
-    const resumeUrl = '/Pranitham_Devarakonda_Resume.pdf';
-    
-    fetch(resumeUrl)
-      .then(res => {
-        if (res.ok) {
-           return res.blob();
-        }
-        throw new Error('Resume not found');
-      })
-      .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = "Pranitham_Devarakonda_Resume.pdf";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-      })
-      .catch(() => {
-        // Fallback to a temporary text file
-        const resumeContent = `
-    Name: Pranitham Devarakonda
-    Title: Linux | Azure | Infrastructure & Automation Administrator
-    Contact: pranitham12374@gmail.com
-
-    --- PLACEHOLDER RESUME ---
-
-    This is a temporary file. Please add your resume to the 'public' folder.
-        `;
-        const blob = new Blob([resumeContent], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Pranitham_Devarakonda_Resume.txt';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      });
   };
 
   return (
@@ -101,8 +59,9 @@ const Hero: React.FC = () => {
                       Get In Touch
                     </a>
                     <a 
-                      href="/Pranitham_Devarakonda_Resume.pdf"
-                      onClick={handleResumeDownload}
+                      href={resumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-block bg-transparent border-2 border-accent text-accent font-bold py-3 px-8 rounded-full hover:bg-accent hover:text-secondary transition-all duration-300 transform hover:scale-105 shadow-lifted pointer-events-auto animate-fade-in-up [animation-delay:0.8s] opacity-0"
                     >
                       Download Resume

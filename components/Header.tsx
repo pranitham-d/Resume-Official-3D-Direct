@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const navLinks = [
@@ -11,6 +12,7 @@ const navLinks = [
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const resumeUrl = "https://drive.google.com/uc?export=download&id=1T0GnrrvWR8teOti3Gc8DiAv0hZsC8n08";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +46,7 @@ const Header: React.FC = () => {
         <a href="#" onClick={handleLogoClick} className="text-2xl font-bold text-accent tracking-widest">
           PD
         </a>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -55,6 +57,14 @@ const Header: React.FC = () => {
               {link.label}
             </a>
           ))}
+          <a
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent border-2 border-accent px-4 py-1.5 rounded-full hover:bg-accent hover:text-secondary transition-colors duration-300 uppercase tracking-wider text-sm font-semibold"
+            >
+                Resume
+            </a>
         </div>
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-text-primary focus:outline-none">
@@ -77,6 +87,15 @@ const Header: React.FC = () => {
                 {link.label}
               </a>
             ))}
+             <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="text-text-primary hover:text-accent transition-colors duration-300 block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Download Resume
+              </a>
           </div>
         </div>
       )}

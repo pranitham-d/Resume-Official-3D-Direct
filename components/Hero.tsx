@@ -26,6 +26,8 @@ const AnimatedSphere: React.FC = () => {
 };
 
 const Hero: React.FC = () => {
+  const resumeUrl = "https://drive.google.com/uc?export=download&id=1T0GnrrvWR8teOti3Gc8DiAv0hZsC8n08";
+
   const handleScrollDown = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -45,16 +47,26 @@ const Hero: React.FC = () => {
                 <p className="text-xl md:text-2xl text-text-secondary mb-8 animate-fade-in-up [animation-delay:0.4s] opacity-0">
                   {PERSONAL_INFO.title}
                 </p>
-                <a 
-                  href="#contact"
-                   onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                   }}
-                  className="inline-block bg-accent text-secondary font-bold py-3 px-8 rounded-full hover:bg-accent-secondary transition-all duration-300 transform hover:scale-105 shadow-lifted pointer-events-auto animate-fade-in-up [animation-delay:0.6s] opacity-0"
-                >
-                  Get In Touch
-                </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a 
+                      href="#contact"
+                       onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                       }}
+                      className="inline-block bg-accent text-secondary font-bold py-3 px-8 rounded-full hover:bg-accent-secondary transition-all duration-300 transform hover:scale-105 shadow-lifted pointer-events-auto animate-fade-in-up [animation-delay:0.6s] opacity-0"
+                    >
+                      Get In Touch
+                    </a>
+                    <a 
+                      href={resumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-transparent border-2 border-accent text-accent font-bold py-3 px-8 rounded-full hover:bg-accent hover:text-secondary transition-all duration-300 transform hover:scale-105 shadow-lifted pointer-events-auto animate-fade-in-up [animation-delay:0.8s] opacity-0"
+                    >
+                      Download Resume
+                    </a>
+                </div>
             </div>
         </div>
          <div 
