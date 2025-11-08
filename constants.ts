@@ -1,3 +1,4 @@
+
 import { Skill, Experience, Project, Certification } from './types';
 
 export const PERSONAL_INFO = {
@@ -62,19 +63,19 @@ export const PROJECTS: Project[] = [
     title: "Patch Management Automation",
     description: "Automated the patch management lifecycle of Linux VMs using Ansible scripts to install updates, remove outdated kernels, enhance security posture, and reduce manual overhead in a cloud-based environment.",
     technologies: ["Ansible", "Linux (RHEL)", "Security Updates", "Azure VMs"],
-    imageUrl: "https://picsum.photos/seed/project1/400/300",
+    imageUrl: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=400&auto=format&fit=crop",
   },
   {
     title: "Chat-with-PDF Notes System",
     description: "Developed an AI-powered web app for interactive Q&A with PDF documents using Python Flask, LangChain, and a local LLM. Features included local vector search, PDF preview, and chat history.",
     technologies: ["Python", "Flask", "LangChain", "HuggingFace", "FAISS"],
-    imageUrl: "https://picsum.photos/seed/project2/400/300",
+    imageUrl: "https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=400&auto=format&fit=crop",
   },
   {
     title: "Phishing Website Detection",
     description: "Built a machine learning system to detect phishing websites by analyzing URL features. Implemented and evaluated over 10 models, achieving 97.4% accuracy with Gradient Boosting.",
     technologies: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Machine Learning"],
-    imageUrl: "https://picsum.photos/seed/project3/400/300",
+    imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=400&auto=format&fit=crop",
   },
 ];
 
