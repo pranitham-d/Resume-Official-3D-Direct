@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranitham Devarakonda - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#f8f9fa',      // Light Gray background
+            secondary: '#ffffff',    // White content cards
+            accent: {
+              DEFAULT: '#007bff',      // Bright Blue
+              secondary: '#0056b3'     // Darker Blue for hover
+            },
+            highlight: '#007bff',   // Bright Blue
+            text: {
+              primary: '#212529',      // Dark Charcoal text
+              secondary: '#6c757d',    // Medium Gray text
+            },
+          },
+          boxShadow: {
+            'lifted': '0 10px 20px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            'lifted-lg': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          },
+           animation: {
+            'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+          },
+          keyframes: {
+            'fade-in-up': {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
+      }
+    }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.0",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.6",
+    "three": "https://aistudiocdn.com/three@^0.181.0"
+  }
+}
+</script>
+</head>
+<body class="bg-primary">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
